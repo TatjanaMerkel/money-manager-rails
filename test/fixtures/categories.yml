@@ -1,0 +1,18 @@
+one:
+  name: "Auto"
+  icon: "/icons/example.png"
+  color: "#fff"
+  incomeExpense: 1
+  configuration: one
+
+two:
+  name: "Essen"
+  icon: "/icons/example.png"
+  color: "#000"
+  configuration: one
+
+three:
+  name: "Feiern"
+  icon: "/icons/example.png"
+  color: "#f0f"
+  configuration: one

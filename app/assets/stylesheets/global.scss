@@ -1,0 +1,16 @@
+@import 'mixins';
+
+.align-top {
+
+    @include breakpoint(600px) {
+      margin-top: 80px;
+    }
+  }
+
+a.simple {
+    color: black;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

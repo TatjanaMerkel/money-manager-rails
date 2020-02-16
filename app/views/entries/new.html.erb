@@ -1,0 +1,17 @@
+<div id="edit-record">
+
+  <header id="app-bar" class="mdc-top-app-bar mdc-elevation--z4">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <a href="/app/overview" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
+        <span class="mdc-top-app-bar__title"><%= t(:new_entry) %></span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <span onclick="document.querySelector('.edit-entry').submit()" class="material-icons mdc-top-app-bar__action-item" aria-label="Settings" alt="Settings">done</span>
+      </section>
+    </div>
+  </header>
+
+  <%= render 'form' %>
+
+</div>

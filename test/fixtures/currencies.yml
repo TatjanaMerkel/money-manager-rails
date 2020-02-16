@@ -1,0 +1,7 @@
+euro:
+  name: "Euro"
+  symbol: "€"
+
+dollar:
+  name: "Dollar"
+  symbol: "$"

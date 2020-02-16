@@ -1,0 +1,12 @@
+<div class="align-top">
+  <%= render 'app/app_bar', title: @category.name %>
+  <div class="container">
+
+    <h1><%= @category.name %></h1>
+
+    <a href="<%=categories_url %>" class="mdc-button" >Back</a>
+
+    <%= link_to 'Back', :categories, class: 'mdc-button' %>
+  </div>
+
+</div>

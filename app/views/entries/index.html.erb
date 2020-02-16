@@ -1,0 +1,24 @@
+<div id="all-entries">
+
+  <%= render 'app/app_bar', title: t(:all_entries) %>
+
+  <main>
+
+    <div class="index container align-top">
+
+      <ul class="mdc-list demo-list">
+
+        <% @entries.each do |e| %>
+
+          <li class="mdc-list-item mdc-ripple-upgraded">
+                <span class="mdc-list-item__text">
+                    <%= link_to e.title, e %>
+                </span>
+          </li>
+
+        <% end %>
+      </ul>
+    </div>
+
+  </main>
+</div>

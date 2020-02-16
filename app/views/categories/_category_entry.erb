@@ -1,0 +1,13 @@
+<div class="category-entry mdc-elevation--z1" style="border-color: <%= category.color %>">
+  <div style="height: 48px" onclick="showIconDialog(<%= category.id %>)">
+    <%= category.svg_icon %>
+  </div>
+  <div class="content">
+    <%= form_for category do |form| %>
+      <%= form.hidden_field :color, value: category.color %>
+      <%= form.text_field :title, value: category.name %>
+      <%= form.hidden_field :icon, value: category.icon %>
+    <% end %>
+  </div>
+  <div class="color-box" onclick="showColorDialog(<%= category.id %>)" style="background-color: <%= category.color %>"></div>
+</div>

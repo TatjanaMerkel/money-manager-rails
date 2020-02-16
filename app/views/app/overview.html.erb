@@ -1,0 +1,57 @@
+<div id="overview">
+
+  <%= render 'app_drawer' %>
+
+  <%= render 'menu_bar', title: t(:overview) %>
+
+  <main>
+
+    <h3 class="text-center"><%= t(:expenses_this_month) %></h3>
+    <!-- Pie Chart -->
+    <div id="donutchart"></div>
+
+    <!-- Table -->
+    <table>
+      <tr id="income">
+        <th><%= t(:income).capitalize %></th>
+        <td class="positive"><%= number_with_precision @account.incomes, :precision => 2 %> €</td>
+      </tr>
+      <tr id="expenses">
+        <th><%= t(:expense, count: 2) %></th>
+        <td class="negative"><%= number_with_precision @account.expenses, :precision => 2 %> €</td>
+      </tr>
+    </table>
+    <section id="balance" class="text-center">
+      <p class="<%= @account.balance > 0 ? 'positive' : 'negative' %>"><%= number_with_precision @account.balance, :precision => 2 %> €</p>
+    </section>
+
+    <div class="entries-overview">
+      <a class="mdc-button" href="<%= entries_overview_url %>">
+        <%= t 'all_entries' %>
+      </a>
+    </div>
+
+    <!-- Floating Action Button -->
+    <a href="<%= new_entry_url %>">
+      <button class="mdc-fab app-fab--absolute" aria-label="Favorite">
+        <span class="mdc-fab__icon material-icons">add</span>
+      </button>
+    </a>
+
+  </main>
+
+  <script>
+
+      /* burger menu: on click -> open drawer */
+
+      let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
+      document.querySelector('.mdc-top-app-bar__navigation-icon').addEventListener('click', () => drawer.open = true);
+
+      /* ripple effect on Floating Action Button */
+
+      const fabRipple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-fab'));
+
+      // const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+
+  </script>
+</div>

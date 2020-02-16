@@ -1,0 +1,23 @@
+one:
+  title: "Winterreifen"
+  amount: -150.00
+  photo: "/uploads/example.jpeg"
+  currency: euro
+  date: 01-02-2018
+  category: one
+
+two:
+  title: "MacBook"
+  amount: -1500.00
+  photo: "/uploads/example.jpeg"
+  currency: euro
+  date: 10-10-2018
+  category: one
+
+three:
+  title: "Essen"
+  amount: -50.00
+  photo: "/uploads/example.jpeg"
+  currency: dollar
+  date: 01-02-2018
+  category: one

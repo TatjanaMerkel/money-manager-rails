@@ -1,0 +1,9 @@
+one:
+  email: "test@test.example"
+  password_digest: "$2a$10$xNmd3y2rT8ZHPeJa4Q3dr.dzC52FlhIc4ya9P8d2/j8PvnEo7Lu.."  # hash for 'lalala
+  activated: true
+
+two:
+  email: "test2@example.com"
+  password_digest: "$2a$10$xNmd3y2rT8ZHPeJa4Q3dr.dzC52FlhIc4ya9P8d2/j8PvnEo7Lu.."
+  activated: true

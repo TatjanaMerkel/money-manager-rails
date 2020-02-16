@@ -1,0 +1,26 @@
+<div id="settings">
+
+  <%= render 'app_bar', title: t(:settings) %>
+
+  <main>
+
+    <%= form_for @configuration, url: update_settings_path do |f| %>
+
+      <%= mdc_headline(2) {t 'language'} %>
+
+      <select onchange="onSelectionChanged()" class="mdc-select__native-control" required="required" name="configuration[locale_id]">
+        <% Locale.all.each do |l| %>
+          <option
+            value="<%= l.id %>"
+            <%= 'selected' if l == @configuration.locale %>
+          >
+            <%= l.name %>
+          </option>
+
+        <% end %>
+      </select>
+<!--      <input id="ok" class="material-icons mdc-top-app-bar__navigation-icon" type="submit" value="done">-->
+    <% end %>
+
+  </main>
+</div>

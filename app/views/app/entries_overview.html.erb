@@ -1,0 +1,43 @@
+<div id="entries-overview">
+
+  <%= render 'app/app_bar', title: t(:all_entries) %>
+
+  <main>
+
+    <div class="categories container align-top">
+      <div class="mdc-list-group">
+        <% @categories.each do |category| %>
+          <div class="category">
+            <a href="<%= category_path(category) %>" class="simple">
+              <div class="mdc-list-group__subheader mdc-typography--headline5 d-flex justify-content-between">
+                <div class="d-flex justify-content-start">
+                  <div class="icon">
+                    <%= category.svg_icon %>
+                  </div>
+                  <span class="headline"><%= category.name %></span>
+                </div>
+                <span class=" entries-sum"><%= number_with_precision category.sum_all_entries, :precision => 2 %></span>
+              </div>
+            </a>
+            <hr/>
+            <ul class="mdc-list">
+
+              <% category.entries.each do |entry| %>
+                <a class="simple" href="<%= entry_path(entry) %>">
+                  <li class="mdc-list-item mdc-ripple-upgraded entry-list__item">
+                    <div class="w-100 d-flex justify-content-between">
+                      <div class="mdc-list-item__text"><%= entry.title %></div>
+                      <div class="headline"><%= number_with_precision entry.amount, :precision => 2 %></div>
+                    </div>
+                  </li>
+                </a>
+
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,39 @@
+#entries-overview {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+
+  .mdc-top-app-bar {
+    position: static;
+  }
+
+  main {
+    overflow: scroll;
+    padding: 8px;
+
+    .category {
+
+      margin-bottom: 25px;
+
+      .mdc-list {
+        margin-left: 35px;
+      }
+
+      .mdc-list-group__subheader {
+        margin: 0 0 -15px 0;
+      }
+
+      .icon {
+        > svg {
+          height: 70%;
+          margin-right: 10px;
+        }
+
+      }
+    }
+
+    hr {
+      margin: 5px 0;
+    }
+  }
+}

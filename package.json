@@ -1,0 +1,24 @@
+{
+  "name": "money-manager-rails",
+  "private": true,
+  "dependencies": {
+    "@material/toolbar": "^0.36.0",
+    "modernizr": "3.6.0"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.cs.hs-rm.de/money-manager-team/money-manager-rails.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+{
+  "short_name": "Money Manager",
+  "name": "Money Manager",
+  "start_url": "/app/login",
+  "background_color": "#6200ee",
+  "display": "standalone",
+  "theme_color": "#6200ee"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Money Manager</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Material Design -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.38.2/dist/material-components-web.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@0.38.2/dist/material-components-web.min.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  <!-- Correct scaling for mobile view -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+    window.I18n = <%= I18n.backend.send(:translations)[I18n.locale].to_json.html_safe %>;
+</script>
+
+<%= yield %>
+
+
+<%# Snackbar for alerts / messages %>
+
+<% flash.each do |key, message| %>
+  <% if message %>
+    <div class="mdc-snackbar <%= key %>"
+         aria-live="assertive"
+         aria-atomic="true"
+         aria-hidden="true">
+      <div class="mdc-snackbar__text"></div>
+      <div class="mdc-snackbar__action-wrapper">
+        <button type="button" class="mdc-snackbar__action-button"></button>
+      </div>
+    </div>
+
+    <script>
+        const snackbar = new mdc.snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar.<%= key %>'));
+
+        const dataObj = {
+            message: '<%= message.html_safe %>',
+            actionText: I18n.close,
+            actionHandler: function (params) {
+
+            }
+        };
+
+        snackbar.show(dataObj);
+    </script>
+  <% end %>
+
+<% end %>
+</body>
+</html>

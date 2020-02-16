@@ -1,0 +1,71 @@
+<div id="categories">
+
+  <%= render 'app/app_bar', title: t(:categories) %>
+
+  <div id="colorDialog" class="modal">
+    <div class="modal-content">
+      <div class="grid">
+        <div class="color-box" style="background-color: #d32f2f" onclick="setColor('#d32f2f')"></div>
+        <div class="color-box" style="background-color: #c2185b" onclick="setColor('#c2185b')"></div>
+        <div class="color-box" style="background-color: #7b1fa2" onclick="setColor('#7b1fa2')"></div>
+        <div class="color-box" style="background-color: #512da8" onclick="setColor('#512da8')"></div>
+        <div class="color-box" style="background-color: #303f9f" onclick="setColor('#303f9f')"></div>
+        <div class="color-box" style="background-color: #1976d2" onclick="setColor('#1976d2')"></div>
+        <div class="color-box" style="background-color: #0288d1" onclick="setColor('#0288d1')"></div>
+        <div class="color-box" style="background-color: #0097a7" onclick="setColor('#0097a7')"></div>
+        <div class="color-box" style="background-color: #00796b" onclick="setColor('#00796b')"></div>
+        <div class="color-box" style="background-color: #388e3c" onclick="setColor('#388e3c')"></div>
+        <div class="color-box" style="background-color: #689f38" onclick="setColor('#689f38')"></div>
+        <div class="color-box" style="background-color: #afb42b" onclick="setColor('#afb42b')"></div>
+        <div class="color-box" style="background-color: #fbc02d" onclick="setColor('#fbc02d')"></div>
+        <div class="color-box" style="background-color: #ffa000" onclick="setColor('#ffa000')"></div>
+        <div class="color-box" style="background-color: #f57c00" onclick="setColor('#f57c00')"></div>
+        <div class="color-box" style="background-color: #e64a19" onclick="setColor('#e64a19')"></div>
+        <div class="color-box" style="background-color: #5d4037" onclick="setColor('#5d4037')"></div>
+        <div class="color-box" style="background-color: #616161" onclick="setColor('#616161')"></div>
+        <div class="color-box" style="background-color: #455a64" onclick="setColor('#455a64')"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="iconDialog" class="modal">
+    <div class="modal-content">
+      <div class="grid">
+        <div onclick="setIcon('baseline-build-24px.svg')"><%= svg 'baseline-build-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-call-24px.svg')"><%= svg 'baseline-call-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-card_travel-24px.svg')"><%= svg 'baseline-card_travel-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-directions_bus-24px.svg')"><%= svg 'baseline-directions_bus-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-directions_car-24px.svg')"><%= svg 'baseline-directions_car-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-directions_run-24px.svg')"><%= svg 'baseline-directions_run-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-euro_symbol-24px.svg')"><%= svg 'baseline-euro_symbol-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-fastfood-24px.svg')"><%= svg 'baseline-fastfood-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-fitness_center-24px.svg')"><%= svg 'baseline-fitness_center-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-home-24px.svg')"><%= svg 'baseline-home-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-local_dining-24px.svg')"><%= svg 'baseline-local_dining-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-monetization_on-24px.svg')"><%= svg 'baseline-monetization_on-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-motorcycle-24px.svg')"><%= svg 'baseline-motorcycle-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-sentiment_satisfied_alt-24px.svg')"><%= svg 'baseline-sentiment_satisfied_alt-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-shopping_cart-24px.svg')"><%= svg 'baseline-shopping_cart-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-smoking_rooms-24px.svg')"><%= svg 'baseline-smoking_rooms-24px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-weekend-24px.svg')"><%= svg 'baseline-weekend-48px.svg', '#616161' %></div>
+        <div onclick="setIcon('baseline-work-24px.svg')"><%= svg 'baseline-work-24px.svg', '#616161' %></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <h1 id="incomes"><%= t('income').pluralize %></h1>
+
+    <% @account.income_categories.each do |category| %>
+      <%= render "category_entry", category: category %>
+    <% end %>
+
+    <h1 id="expenses"><%= t('expense', count: 2) %></h1>
+
+    <% @account.expense_categories.each do |category| %>
+      <%= render "category_entry", category: category %>
+    <% end %>
+
+  </main>
+</div>

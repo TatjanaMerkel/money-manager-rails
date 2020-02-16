@@ -1,0 +1,158 @@
+@import "mixins";
+
+$icon_width: 64px;
+
+#edit-record {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+
+  .mdc-top-app-bar {
+    position: static;
+  }
+
+  main {
+    overflow: scroll;
+    padding: 8px;
+
+    #muh {
+      margin: auto;
+    }
+
+    #categoryIcon {
+      background-color: lightgray;
+      svg {
+        width: auto;
+        left: 8px;
+        top: 8px;
+
+        &.scale {
+          transition: transform .2s;
+
+          &.in {
+            transform: scaleY(1);
+          }
+          &.out {
+            transform: scaleY(0);
+          }
+        }
+      }
+    }
+
+    #avatar {
+      position: relative;
+    }
+
+    .img-with-gradient {
+      position: relative;
+
+      img {
+        position: absolute;
+      }
+    }
+
+    #title {
+      width: 100%;
+
+      & > * {
+        display: inline-block;
+      }
+
+      .mdc-text-field {
+        background-color: transparent;
+      }
+
+      #text-field--box {
+        font-size: 30px;
+      }
+
+      .mdc-fab {
+        left: 25px;
+      }
+    }
+
+    .money {
+
+      @include breakpoint(1000px) {
+        width: 410px;
+        margin: 0 auto;
+      }
+
+      border-radius: 10px;
+      background-color: #b6ffb9;
+
+      #signPlus {
+        margin-top: 12px;
+        background-color: grey;
+      }
+
+      .mdc-text-field {
+        background-color: transparent;
+        #value {
+          font-size: 40px;
+          text-align: center;
+        }
+      }
+
+      #currency {
+        @extend #signPlus;
+      }
+
+    }
+
+    #choosePlusMinus {
+      margin-left: 81px;
+      width: 120px;
+      margin-top: 57px;
+
+      #plus {
+
+      }
+      #minus {
+
+      }
+    }
+
+    .form {
+      width: 100%;
+      @include breakpoint(1000px) {
+        width: 1000px;
+        margin: 0 auto;
+      }
+
+    }
+
+    .w100 {
+      width: 100%;
+    }
+
+    .mdc-text-field {
+      @extend .w100;
+    }
+
+    .mdc-select {
+      @extend .w100;
+      height: 56px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .mdc-floating-label {
+      // margin-bottom: 20px;
+    }
+
+  }
+
+  #ok {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    z-index: 10;
+    color: white;
+  }
+}

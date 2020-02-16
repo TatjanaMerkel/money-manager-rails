@@ -1,0 +1,23 @@
+#statistics {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+
+  .mdc-top-app-bar {
+    position: static;
+  }
+
+  main {
+    overflow: scroll;
+    padding: 8px;
+
+    .card {
+      height: 240px;
+      padding: 8px;
+    }
+
+    .card:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+}

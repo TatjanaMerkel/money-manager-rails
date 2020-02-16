@@ -1,0 +1,55 @@
+$('#statistics').ready ->
+  if ($('#statistics').length > 0)
+
+# Incomes
+
+    $.get '/charts/incomes', (data) ->
+      drawChart = ->
+        data = google.visualization.arrayToDataTable(data)
+
+        options =
+          title: I18n.income
+          colors: ['#388E3C']
+          isStacked: true
+
+        chart = new google.charts.Bar(document.getElementById('incomes_chart'))
+        chart.draw data, google.charts.Bar.convertOptions options
+
+      google.charts.load 'current', 'packages': ['bar']
+      google.charts.setOnLoadCallback drawChart
+
+    # Expenses
+
+    $.get '/charts/expenses', (data) ->
+      drawChart = ->
+        data = google.visualization.arrayToDataTable(data)
+
+        options =
+          title: I18n.expense.other
+          colors: ['#D32F2F']
+          isStacked: true
+
+        chart = new google.charts.Bar(document.getElementById('expenses_chart'))
+        chart.draw data, google.charts.Bar.convertOptions options
+
+      google.charts.load 'current', 'packages': ['bar']
+      google.charts.setOnLoadCallback drawChart
+
+    # Balance Chart
+
+    $.get '/charts/2018?type=balance', (data) ->
+      drawChart3 = ->
+        data.unshift(['', I18n.balance, {role: 'style'}])
+        data3 = google.visualization.arrayToDataTable(data)
+
+        options3 =
+          title: I18n.balance,
+          legend:
+            position: 'none'
+
+        chart3 = new google.charts.Bar(document.getElementById('balance_chart'))
+
+        chart3.draw data3, google.charts.Bar.convertOptions options3
+
+      google.charts.load 'current', 'packages': ['bar']
+      google.charts.setOnLoadCallback drawChart3
